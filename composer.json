@@ -1,0 +1,23 @@
+{
+    "name": "tienda/prueba",
+    "description": "Tienda de prueba para la prueba de programacion de remoters",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "luis ontivero",
+            "email": "luisob24@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/symfony": "5.4.x-dev",
+        "symfony/http-kernel": "5.4.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "Controllers/",
+            "Models\\": "Models/"
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{% extends "layouts/default.html.twig "%}
+
+{% block content %}
+
+<div class="container">
+    <div class="row m-4">
+        <div class="col">
+            <p class="h5">Carrito de compras</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-hover table-borderless">
+                <thead>
+                    <tr>
+                      <th scope="col">Talla</th>
+                      <th scope="col">Color</th>
+                      <th scope="col">costo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for item in cart.items %}
+                    <tr>
+                      <td scope="row">{{ item.talla }}</td>
+                      <td scope="row">{{ item.color }}</td>
+                      <td scope="row">{{ item.precio ~ " Є" }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <table class="table  table-borderless">
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td width="100px"><strong>Subtotal</strong></td>
+                                    <td width="100px">{{cart.total.subtotal ~ " Є"}}</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td width="100px"><strong>Envio</strong></td>
+                                    <td width="100px">{{ cart.total.envio ~ " Є"}}</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td width="100px"><strong>total</strong></td>
+                                    <td width="100px">{{ cart.total.subtotal +  cart.total.envio }} Є </td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}
